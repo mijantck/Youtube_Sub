@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Components-->
+
+    <!--Bottom Sheets-->
+    <!--Navigation Drawer-->
+    <!--Bottom Navigation -->
+
+    <!--Toolbar-->
+    <style name="Widget.MyTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary"/>
+</resources>

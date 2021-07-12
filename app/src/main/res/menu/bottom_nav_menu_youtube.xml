@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/youtube_view"
+        android:icon="@drawable/ic_baseline_preview_24"
+        android:title="View" />
+
+    <item
+        android:id="@+id/youtube_like"
+        android:icon="@drawable/ic_baseline_thumb_up_24"
+        android:title="Like" />
+
+    <item
+        android:id="@+id/youtube_add"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
+        android:title="Add" />
+
+    <item
+        android:id="@+id/youtube_coin"
+        android:title="Coin Earn"
+        android:icon="@drawable/ic_baseline_monetization_on_24"/>
+
+    <item
+        android:id="@+id/youtube_sub"
+        android:icon="@drawable/ic_baseline_subscriptions_24"
+        android:title="Subscribe" />
+
+</menu>

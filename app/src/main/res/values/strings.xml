@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Youtube Sub</string>
+    <string name="title_home">Home</string>
+    <string name="title_payment">Payment</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_new_cart">New Cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bugdroid_ghost">The Android bug-droid with a transparent background</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+    <string name="slide_up">Slide up</string>
+    <string name="slide">Slide</string>
+    <string name="slide_down">Slide down</string>
+    <string name="random_color">Random color</string>
+    <string name="use_blur">Use blur</string>
+    <string name="items_clickables">Items clickables</string>
+    <string name="auto_dismiss">Auto dismiss</string>
+    <string name="blur_radius">Blur Radius</string>
+    <string name="blur_downscale">Blur Downscale</string>
 </resources>

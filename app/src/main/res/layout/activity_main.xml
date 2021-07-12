@@ -1,18 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:background="@android:color/holo_red_dark"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:padding="4dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="Vio plus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_below="@+id/topLayout"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav_view_all"/>
+
+    <com.zagori.bottomnavbar.BottomNavBar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_nav_view_all"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="bottom"
+        app:bn_background_color="@color/colorError"
+        app:bn_item_color="@drawable/bottom_nav_item_state"
+        app:bn_menu="@menu/bottom_nav_menu_youtube"
+        app:bn_curve_vertical_offset="0dp"
+        app:bn_curve_margin="6dp"
+        app:bn_curve_rounded_corner_radius="8dp"
+        app:bn_fab_size="normal"
+        app:bn_fab_menu_index="2"
+        app:bn_fab_background_color="@color/colorError"
+        app:bn_fab_icon_color="@color/colorOnPrimary"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
