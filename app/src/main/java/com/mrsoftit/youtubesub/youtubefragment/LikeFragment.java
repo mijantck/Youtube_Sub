@@ -179,6 +179,7 @@ public class LikeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), OverlyActivity.class);
                 intent.putExtra("url",VideUrl);
+                intent.putExtra("count","40");
                 startActivity(intent);
             }
         });

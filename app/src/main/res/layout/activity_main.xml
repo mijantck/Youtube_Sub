@@ -8,30 +8,11 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-
     <LinearLayout
         android:orientation="vertical"
         android:id="@+id/topLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-        <LinearLayout
-            android:gravity="center"
-            android:background="@android:color/holo_red_dark"
-            android:layout_width="match_parent"
-            android:layout_height="60dp">
-
-            <TextView
-                android:padding="4dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:textSize="20dp"
-                android:text="Vio plus"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
 
         <LinearLayout
             android:background="@android:color/black"
@@ -45,11 +26,11 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_nav_view_all"/>
+        android:layout_above="@id/bottom_nav_view"/>
 
     <com.zagori.bottomnavbar.BottomNavBar
         android:layout_alignParentBottom="true"
-        android:id="@+id/bottom_nav_view_all"
+        android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

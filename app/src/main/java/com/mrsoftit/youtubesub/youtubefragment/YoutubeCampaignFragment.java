@@ -31,11 +31,9 @@ public class YoutubeCampaignFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    Context context;
 
-    public YoutubeCampaignFragment(Context context) {
-        this.context = context;
-    }
+
+
 
     public YoutubeCampaignFragment() {
         // Required empty public constructor
@@ -108,7 +106,7 @@ public class YoutubeCampaignFragment extends Fragment {
 
 
                         if (parts.length  <4){
-                            Toast.makeText(context, "Try again", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Try again", Toast.LENGTH_SHORT).show();
                             Log.d("sdf", "onClick: ");
                             return;
                         }else {
@@ -118,7 +116,7 @@ public class YoutubeCampaignFragment extends Fragment {
                             channelID = parts[3];
                         }
 
-                        Toast.makeText(context, "out", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "out", Toast.LENGTH_SHORT).show();
 
                         ChannelIconName channelIconName = new ChannelIconName(channelID);
                         String currentId =  channelIconName.execute().get();
@@ -130,7 +128,7 @@ public class YoutubeCampaignFragment extends Fragment {
                         String name = channelNameIcon[1];
                         channelName = name;
 
-                        Intent intent = new Intent(context, YoutubeVideInfoActivity.class);
+                        Intent intent = new Intent(getContext(), YoutubeVideInfoActivity.class);
                         intent.putExtra("videoID",videoID);
                         intent.putExtra("videoName",videoNameID);
                         intent.putExtra("videoImageUrl",videoImageURL);

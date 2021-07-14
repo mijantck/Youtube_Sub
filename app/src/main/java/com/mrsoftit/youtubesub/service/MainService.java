@@ -18,6 +18,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.mrsoftit.youtubesub.R;
+import com.mrsoftit.youtubesub.activity.MainActivity;
 
 
 public class MainService extends Service implements View.OnTouchListener{
@@ -27,13 +28,8 @@ public class MainService extends Service implements View.OnTouchListener{
     int countDwon ;
     int countDwon1 ;
 
-
-
-
     private WindowManager windowManager;
-
     float dX, dY;
-
 
     private View floatyView;
     @Override
@@ -50,11 +46,8 @@ public class MainService extends Service implements View.OnTouchListener{
 
     @Override
     public void onCreate() {
-
         super.onCreate();
-
         windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-
         addOverlayView();
     }
 
@@ -130,7 +123,18 @@ public class MainService extends Service implements View.OnTouchListener{
             floatyView = inflater.inflate(R.layout.floating_view, interceptorLayout);
 
             Button butttttttt = floatyView.findViewById(R.id.butttttttt);
+            Button backToApp = floatyView.findViewById(R.id.backToApp);
 
+            backToApp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onDestroy();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("fragname","like");
+                    startActivity(intent);
+                }
+            });
             butttttttt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -157,11 +161,10 @@ public class MainService extends Service implements View.OnTouchListener{
                             butttttttt.setText(ss+"");
 
                         }public void onFinish() {
+
                             windowManager.updateViewLayout(floatyView,params1);
-
-                            onFinish();
-                            //  butttttttt.setVisibility(View.GONE);
-
+                            butttttttt.setVisibility(View.GONE);
+                            backToApp.setVisibility(View.VISIBLE);
 
                         }
                     }.start();
@@ -169,9 +172,6 @@ public class MainService extends Service implements View.OnTouchListener{
                 }
             }.start();
             floatyView.setOnTouchListener(this);
-
-
-
 
         }
         else {
@@ -182,11 +182,8 @@ public class MainService extends Service implements View.OnTouchListener{
     @Override
     public void onDestroy() {
         super.onDestroy();
-
         if (floatyView != null) {
-
             windowManager.removeView(floatyView);
-
             floatyView = null;
         }
     }
@@ -194,9 +191,7 @@ public class MainService extends Service implements View.OnTouchListener{
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
        view.performClick();
-
         Log.v(TAG, "onTouch...");
-
         Toast.makeText(this, "cloo", Toast.LENGTH_SHORT).show();
         // Kill service
        // onDestroy();

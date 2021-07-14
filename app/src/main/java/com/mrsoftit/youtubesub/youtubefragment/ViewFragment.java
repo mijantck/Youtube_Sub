@@ -88,11 +88,18 @@ public class ViewFragment extends Fragment {
                             String videoUrl = document.get("youtubeVideId").toString();
                             dataList.add(new YoutubeSetData(videoUrl,videoId));
                         }
+
+                        if (dataList.isEmpty()){
+                            return;
+                        }
+
                         Random random = new Random();
                         if (!dataList.isEmpty()){
                             randomID = random.nextInt(dataList.size());
                         }
                         String videoId =  dataList.get(randomID).getYoutubeVideId();
+
+
                         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                             @Override
                             public void onReady(@NonNull YouTubePlayer youTubePlayer) {

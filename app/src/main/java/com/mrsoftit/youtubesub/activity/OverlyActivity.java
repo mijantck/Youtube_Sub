@@ -45,6 +45,7 @@ public class OverlyActivity extends AppCompatActivity {
     private void launchMainService(String url,String count) {
 
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.instagram.android");
+
         startActivity( new Intent(Intent.ACTION_VIEW, Uri.parse(url)) );
 
        /* try {
@@ -54,6 +55,7 @@ public class OverlyActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/appetizerandroid")));
         }*/
 
+        Toast.makeText(this, count+"", Toast.LENGTH_SHORT).show();
         Intent svc = new Intent(this, MainService.class);
         svc.putExtra("count",count);
         stopService(svc);
@@ -65,7 +67,6 @@ public class OverlyActivity extends AppCompatActivity {
     private final static int REQUEST_CODE = 10101;
 
     private void checkDrawOverlayPermission() {
-
         // Checks if app already has permission to draw overlays
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
